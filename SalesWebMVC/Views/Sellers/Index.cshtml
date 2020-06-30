@@ -6,25 +6,32 @@
 
 <h2>@ViewData["Title"]</h2>
 
+<p>
+    <a asp-action="Create" class="btn btn-default">Create new</a>
+</p>
+
 <table class="table table-striped table-hover">
     <thead> <!-- Comando para on cabeçalho data tabela ng-->
-        <tr> <!-- Comando para definir a linha do cabeçalho da tabela-->
+        <tr> <!--Comando para definir a linha do cabeçalho da tabela-->
             <th> 
                 <font size="3">
                     @Html.DisplayNameFor(model => model.Name)
+                </font>
             </th>
             <th>
                 <font size="3">
                     @Html.DisplayNameFor(model => model.Email)
+                </font>
             </th>
             <th>
                 <font size="3">
                     @Html.DisplayNameFor(model => model.BirthDate)
+                </font>
             </th>
             <th>
                 <font size="3">
                     @Html.DisplayNameFor(model => model.BaseSalary)
-
+                </font>
             </th> 
         <th>
 
