@@ -24,7 +24,7 @@ namespace SalesWebMVC.Services
 
         public async Task<List<Department>> FindAllAsync()
         {
-            return await _context.Department.OrderBy(x => x.Name).ToListAsync();  //Await informa o compilador que a chamada é assíncrona
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();  //Await informa ao compilador que a chamada é assíncrona
         }
     }
 }
