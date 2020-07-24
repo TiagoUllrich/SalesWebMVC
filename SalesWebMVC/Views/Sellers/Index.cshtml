@@ -11,8 +11,8 @@
 </p>
 
 <table class="table table-striped table-hover">
-    <thead> <!-- Comando para on cabeçalho data tabela ng-->
-        <tr> <!--Comando para definir a linha do cabeçalho da tabela-->
+    <thead> <!-- Cabeçalho data tabela ng-->
+        <tr> <!--Definir a linha do cabeçalho da tabela-->
             <th> 
                 <font size="3">
                     @Html.DisplayNameFor(model => model.Name)
@@ -39,11 +39,11 @@
 
         </tr>
     </thead>
-    <tbody> <!--Comando para o corpo da tabela-->
+    <tbody> <!--Corpo da tabela-->
         @foreach (var item in Model)
         {
         <tr>
-            <td> <!-- Comando para definir as colunas da tabela -->
+            <td> <!-- Definir as colunas da tabela -->
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
