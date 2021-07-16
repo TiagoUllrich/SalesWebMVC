@@ -39,10 +39,11 @@ namespace SalesWebMVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            //services.AddDbContext<SalesWebMVCContext>(options => 
-            //options.UseMySql(Configuration.GetConnectionString("SalesWebMVCContext"), builder => builder.MigrationsAssembly("SalesWebMVC")));
-            
-            services.AddDbContext<SalesWebMVCContext>(options => options.UseInMemoryDatabase("SalesWebMVCContext")); //Informa a conexão com o banco para os controllers.
+            //Informa a conexão com o banco para os controllers.
+            services.AddDbContext<SalesWebMVCContext>(options =>            
+            //options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCContext"), builder => builder.MigrationsAssembly("SalesWebMVC")));
+            //options.UseMySql(Configuration.GetConnectionString("SalesWebMVCContextMySql"), builder => builder.MigrationsAssembly("SalesWebMVC")));
+            options.UseInMemoryDatabase("SalesWebMVCContext")); 
 
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
