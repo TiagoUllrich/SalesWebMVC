@@ -1,18 +1,18 @@
-﻿using System;
-using SalesWebMVC.Models;
+﻿using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Data;
+using SalesWebMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace SalesWebMVC.Services
 {
     public class SalesRecordService
     {
-        private readonly SalesWebMVCContext _context;
+        private readonly SalesWebMvcContext _context;
 
-        public SalesRecordService(SalesWebMVCContext context)
+        public SalesRecordService(SalesWebMvcContext context)
         {
             _context = context;
         }

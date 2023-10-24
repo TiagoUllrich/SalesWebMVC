@@ -8,7 +8,7 @@ using SalesWebMVC.Data;
 
 namespace SalesWebMVC.Migrations
 {
-    [DbContext(typeof(SalesWebMVCContext))]
+    [DbContext(typeof(SalesWebMvcContext))]
     [Migration("20200630131902_DepartmentForeignKey")]
     partial class DepartmentForeignKey
     {

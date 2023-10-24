@@ -1,37 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Data;
 using SalesWebMVC.Models;
-using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Services.Exceptions;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SalesWebMVC.Services
 {
     public class SellerService
     {
-        private readonly SalesWebMVCContext _context;
+        private readonly SalesWebMvcContext _context;
 
-        public SellerService(SalesWebMVCContext context)
+        public SellerService(SalesWebMvcContext context)
         {
             _context = context;
         }
 
-        public async Task<List<Seller>> FindAllAsync() //Encontrar através do objeto _context uma lista de todos os vendedores. Esse método é sincrono, ou seja, toda a aplicação irá travar enquanto roda
+        public async Task<List<Seller>> FindAllAsync()
         {
             return await _context.Seller.ToListAsync();
         }
 
-        public async Task InsertAsync(Seller obj)
-        {            
-            _context.Add(obj);
-            await _context.SaveChangesAsync();  //Como apenas o SaveChanges() acessa o banco, apenas dele é necessário alterar para Async e informar o await
-        }
-
         public async Task<Seller> FindByIdAsync(int id)
         {
-            return await _context.Seller.Include(obj => obj.Department).FirstOrDefaultAsync(obj => obj.Id == id); //Encontrar vendedor
+            return await _context.Seller.Include(obj => obj.Department).FirstOrDefaultAsync(obj => obj.Id == id);
+        }
+
+        public async Task InsertAsync(Seller obj)
+        {
+            _context.Add(obj);
+            await _context.SaveChangesAsync();
         }
 
         public async Task RemoveAsync(int id)
